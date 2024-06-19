@@ -357,7 +357,10 @@ class OctaveScriptLinesGenerator2(CommonScriptLinesGenerator):
                     #       +pi for stop point
                     #   therefore to correct this since theta is in range -pi..+pi I have to add 360deg so +2*pi for start point will get it right as it should be
                     #
-                    genScript += f"portStart(1) += 2*pi\n"
+
+                    #18th June - LuboJ - commented this hack, it's causing problems, theta mas be <-2*pi. 2*pi> if it's more there is some positioning problem, for now disabled, need to be RETHINK AGAIN!
+                    #genScript += f"portStart(1) += 2*pi\n"
+                    pass
 
         else:
             # CARTESIAN GRID USED
